@@ -49,8 +49,8 @@ with open(output_file, 'w') as data:
                 f"Total Months: {num_months}",
                 f"Total: ${profit_total}",
                 f"Average Change: ${avg_change}",
-                f"max Decrease in Profits: {max_decrease_date} (${max_decrease_profit})",
-                f"Greates Increase in Profits: {max_increase_date} (${max_increase_profit})",
+                f"Greatest Decrease in Profits: {max_decrease_date} (${max_decrease_profit})",
+                f"Greatest Increase in Profits: {max_increase_date} (${max_increase_profit})",
                 ])
 
 with open(output_file, 'r') as dataprint:
