@@ -17,6 +17,7 @@ candidates = []
 percent_vote = 0
 winnervalue = 0
 winner = ''
+candidate = ''
 
 with open(election_data, 'r') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
@@ -34,6 +35,7 @@ with open(election_data, 'r') as csvfile:
         
     for k, v in num_votes.items():
         percent_vote = '{0:3f}%'.format((v/total_votes) * 100)
+        candidate = k, (percent_vote), (v)
 
         if v > winnervalue:
             winnervalue = v
@@ -49,6 +51,8 @@ with open(output_file, 'w') as data:
                 "-" * 20, 
                 f"Total Votes: {total_votes}",
                 "-" * 20,
+                f"{candidate}",
+                "-" * 20,
                 f"Winner: {winner}",
                 "-" * 20,
                 ])
@@ -59,6 +63,3 @@ with open(output_file, 'r') as dataprint:
     for line in print_data:
         print(line[0])
     print('\n')
-
-
-
